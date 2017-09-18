@@ -18,11 +18,11 @@
                 <v-text-field
                     slot="activator"
                     label="Data da notificação"
-                    v-model="e3"
+                    v-model="lembrete.data"
                     prepend-icon="event"
                     readonly/>
 
-                <v-date-picker v-model="e3" no-title autosave></v-date-picker>
+                <v-date-picker v-model="lembrete.data" no-title autosave></v-date-picker>
             </v-menu>
 
             <v-menu
@@ -36,31 +36,34 @@
                 <v-text-field
                     slot="activator"
                     label="Hora da notificação"
-                    v-model="e6"
+                    v-model="lembrete.hora"
                     prepend-icon="access_time"
                     readonly/>
 
-                <v-time-picker format="24hr" v-model="e6" autosave></v-time-picker>
+                <v-time-picker format="24hr" v-model="lembrete.hora" autosave></v-time-picker>
 
             </v-menu>
 
             <v-select
-                label="Clientes"
-                v-bind:items="states"
+                label="Pessoas notificadas"
+                v-bind:items="pessoas"
                 prepend-icon="face"
-                v-model="e7"
+                v-model="lembrete.pessoas"
                 multiple
                 chips
+                no-data-text="Nenhum resultado"
+                item-text="nome"
+                item-value="id"
                 hint="Selecione os clientes que receberão notificado"
                 persistent-hint></v-select>
             
             <v-text-field
-            name="input-7-1"
-            prepend-icon="chat"
-            label="Escreva um recado"
-            multi-line></v-text-field>
+                v-model="lembrete.mensagem"
+                prepend-icon="chat"
+                label="Escreva um recado"
+                multi-line></v-text-field>
 
-            <v-btn @click="submit">
+            <v-btn @click="criarLembrete">
                 <v-icon dark>watch</v-icon>
                 agendar
             </v-btn>
@@ -70,24 +73,35 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data () {
     return {
-      e3: '2017-09-01',
+      lembrete: {
+        pessoas: [],
+        mensagem: null,
+        data: null,
+        hora: null
+      },
       menu: false,
       modal: false,
-      e6: '00:50',
       menu2: false,
       modal2: false,
-      e7: [],
-      states: [
-        'Alabama', 'Alaska', 'American Samoa', 'Arizona'
-      ]
+      pessoas: []
     }
   },
-  methods: {
-    submit: function () {
+  created: function () {
+    axios.get(`http://localhost:8080/pessoa`).then(response => {
+      this.pessoas = response.data
+    })
+  },
 
+  methods: {
+    criarLembrete: function () {
+      axios.post(`http://localhost:8080/lembretes`, this.lembrete).then(response => {
+        console.log(response)
+      })
     }
   }
 }

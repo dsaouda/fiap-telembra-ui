@@ -10,15 +10,15 @@
             <v-list dense>
             
                 <v-list-tile>              
-                        <v-list-tile-action>
-                            <v-icon>home</v-icon>
-                        </v-list-tile-action>
-                    
-                        <v-list-tile-content>
-                            <router-link to="/">
-                                <v-list-tile-title>home</v-list-tile-title>
-                            </router-link>
-                        </v-list-tile-content>              
+                    <v-list-tile-action>
+                        <v-icon>home</v-icon>
+                    </v-list-tile-action>
+                
+                    <v-list-tile-content>
+                        <router-link to="/home">
+                            <v-list-tile-title>home</v-list-tile-title>
+                        </router-link>
+                    </v-list-tile-content>              
                 </v-list-tile>
 
                 <!-- clientes -->
@@ -106,6 +106,18 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list-group>
+
+                <v-list-tile>              
+                    <v-list-tile-action>
+                        <v-icon>exit_to_app</v-icon>
+                    </v-list-tile-action>
+                
+                    <v-list-tile-content>
+                        <router-link to="/">
+                            <v-list-tile-title>sair</v-list-tile-title>
+                        </router-link>
+                    </v-list-tile-content>              
+                </v-list-tile>
 
             </v-list>
         
