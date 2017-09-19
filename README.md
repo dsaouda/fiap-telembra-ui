@@ -2,9 +2,10 @@
 
 Fiap te lembra é um projeto que usa TotalVoice para lembrar os usuários sobre um comunicado/agendamento
 
-## template
+## framework e template
 
-https://vuetifyjs.com
+- https://vuejs.org/
+- https://vuetifyjs.com
 
 ## projeto server api
 
