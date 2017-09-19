@@ -2,7 +2,7 @@
 
     <app-layout>
         <span slot="title" class="title">
-          Pessoa: Listagem
+          Listagem de pessoas
         </span>
         
         <v-btn @click="novo()" class="pink" dark fixed bottom right fab>

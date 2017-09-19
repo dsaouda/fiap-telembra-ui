@@ -1,7 +1,7 @@
 <template>
 
     <app-layout>
-        <span slot="title" class="title">Pessoa: Novo</span>
+        <span slot="title" class="title">Novo pessoa</span>
 
         <v-form>
             <v-text-field

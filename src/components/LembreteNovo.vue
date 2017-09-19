@@ -2,7 +2,7 @@
     
     <app-layout>
 
-        <span slot="title" class="title">Lembrete: Novo</span>
+        <span slot="title" class="title">Novo lembrete</span>
 
         <v-form>
             <v-menu
@@ -100,7 +100,7 @@ export default {
   methods: {
     criarLembrete: function () {
       axios.post(`http://localhost:8080/lembretes`, this.lembrete).then(response => {
-        console.log(response)
+        this.$router.push(`/lembrete/agendados`)
       })
     }
   }

@@ -14,7 +14,7 @@ Vue.component(PublicLayout.name, PublicLayout)
 Vue.config.productionTip = false
 
 //  enviando token
-axios.defaults.headers.common['x-api-key'] = sessionStorage.getItem('token')
+axios.defaults.headers.common['x-api-key'] = localStorage.getItem('token')
 
 // criado para atender ao lint
 Vue.create = function (options) {
