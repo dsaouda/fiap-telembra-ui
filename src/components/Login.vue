@@ -57,7 +57,7 @@ export default {
   methods: {
     logar: function () {
       this.snackbar = false
-      axios.post(`http://localhost:8080/login`, this.login).then(response => {
+      axios.post(`/login`, this.login).then(response => {
         localStorage.setItem('token', response.data.token)
         this.$router.push('/home')
       }).catch(error => {

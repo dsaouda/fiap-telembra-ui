@@ -92,14 +92,14 @@ export default {
     }
   },
   created: function () {
-    axios.get(`http://localhost:8080/pessoa`).then(response => {
+    axios.get(`/pessoa`).then(response => {
       this.pessoas = response.data
     })
   },
 
   methods: {
     criarLembrete: function () {
-      axios.post(`http://localhost:8080/lembretes`, this.lembrete).then(response => {
+      axios.post(`/lembretes`, this.lembrete).then(response => {
         this.$router.push(`/lembrete/agendados`)
       })
     }

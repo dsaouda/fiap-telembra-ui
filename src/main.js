@@ -15,6 +15,7 @@ Vue.config.productionTip = false
 
 //  enviando token
 axios.defaults.headers.common['x-api-key'] = localStorage.getItem('token')
+axios.defaults.baseURL = process.env.BASE_URL
 
 // criado para atender ao lint
 Vue.create = function (options) {

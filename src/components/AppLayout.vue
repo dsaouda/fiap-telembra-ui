@@ -112,10 +112,8 @@
                         <v-icon>exit_to_app</v-icon>
                     </v-list-tile-action>
                 
-                    <v-list-tile-content>
-                        <router-link to="/">
-                            <v-list-tile-title>sair</v-list-tile-title>
-                        </router-link>
+                    <v-list-tile-content @click="sair">                        
+                        <v-list-tile-title>sair</v-list-tile-title>                        
                     </v-list-tile-content>              
                 </v-list-tile>
 
@@ -143,6 +141,12 @@
     data () {
       return {
         drawer: null
+      }
+    },
+    methods: {
+      sair: function () {
+        this.$router.push('/')
+        localStorage.removeItem('token')
       }
     }
   }

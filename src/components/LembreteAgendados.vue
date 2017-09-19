@@ -43,7 +43,7 @@ export default {
     }
   },
   created: function () {
-    axios.get(`http://localhost:8080/lembretes/nao-enviado`).then(response => {
+    axios.get(`/lembretes/nao-enviado`).then(response => {
       this.items = response.data
     })
   },
@@ -53,7 +53,7 @@ export default {
     },
 
     deletar: function (lembrete) {
-      axios.delete(`http://localhost:8080/lembretes/${lembrete.id}`).then(response => {
+      axios.delete(`/lembretes/${lembrete.id}`).then(response => {
         this.$router.go(this.$router.currentRoute)
       })
     }

@@ -21,10 +21,14 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
     }
+  },
+  created: function () {
+    axios.defaults.headers.common['x-api-key'] = localStorage.getItem('token')
   }
 }
 </script>

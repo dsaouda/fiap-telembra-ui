@@ -62,7 +62,7 @@
     },
 
     created: function () {
-      axios.get(`http://localhost:8080/pessoa`).then(response => {
+      axios.get(`/pessoa`).then(response => {
         this.items = response.data
       })
     },
@@ -77,7 +77,7 @@
       },
 
       deletar: function (pessoa) {
-        axios.delete(`http://localhost:8080/pessoa/${pessoa.id}`).then(response => {
+        axios.delete(`/pessoa/${pessoa.id}`).then(response => {
           this.$router.go(this.$router.currentRoute)
         })
       }

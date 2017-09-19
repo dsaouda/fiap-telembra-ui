@@ -42,7 +42,7 @@ export default {
   created: function () {
     let pessoa = parseInt(this.$route.query.p)
     if (pessoa) {
-      axios.get(`http://localhost:8080/pessoa/${pessoa}`).then(response => {
+      axios.get(`/pessoa/${pessoa}`).then(response => {
         this.pessoa = response.data
       })
     }
@@ -50,7 +50,7 @@ export default {
 
   methods: {
     submit: function () {
-      axios.post(`http://localhost:8080/pessoa`, this.pessoa).then(response => {
+      axios.post(`/pessoa`, this.pessoa).then(response => {
         this.$router.push(`/pessoa/todos`)
       })
     }

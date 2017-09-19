@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     criarConta: function () {
-      axios.post(`http://localhost:8080/criar-conta`, {cliente: this.cliente, login: this.usuario}).then(response => {
+      axios.post(`/criar-conta`, {cliente: this.cliente, login: this.usuario}).then(response => {
         this.$router.push('/')
       })
     }
