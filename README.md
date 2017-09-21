@@ -28,3 +28,9 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## build on docker
+
+```bash
+docker run --rm -p 3000:3000 -v `pwd`:/root -w /root node npm install && npm run dev
+```
