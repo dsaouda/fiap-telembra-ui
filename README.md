@@ -32,5 +32,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## build on docker
 
 ```bash
-docker run --rm -p 3000:3000 -v `pwd`:/root -w /root node npm install && npm run dev
+docker run --rm -p 3000:3000 -v `pwd`:/root -w /root node bash -c 'npm install && npm run dev'
 ```
