@@ -13,7 +13,7 @@
 
             <v-text-field
                 label="Telefone"
-                hint="exemplo: (11) 99999-9999"
+                hint="valor válido: xx999999999 (xx = DDD e 999999999 = telefone)"
                 persistent-hint
                 v-model="pessoa.telefone"                               
                 prepend-icon="phone"
