@@ -1,4 +1,4 @@
-# fiap-te-lembra
+# fiap-telembra
 
 Fiap te lembra é um projeto que usa [TotalVoice](http://www.totalvoice.com.br) para lembrar os usuários sobre um comunicado/agendamento
 
@@ -28,3 +28,9 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## build on docker
+
+```bash
+docker run --rm -p 3000:3000 -v `pwd`:/root -w /root node bash -c 'npm install && npm run dev'
+```
