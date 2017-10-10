@@ -55,7 +55,7 @@
       return {
         headers: [
           { text: 'Nome', align: 'left', value: 'nome' },
-          { text: 'Email', align: 'left', value: 'telefone' }
+          { text: 'Telefone', align: 'left', value: 'telefone' }
         ],
         items: []
       }
